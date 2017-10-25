@@ -1,0 +1,16 @@
+{
+  "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module"
+  },
+  "extends": "airbnb/base",
+  "rules": {
+    "indent": ["warn", 4],
+    "prefer-template": "off",
+    "eqeqeq": "off",
+    "no-console": "off",
+    "no-unused-vars": "off",
+    "radix": "off",
+    "no-multiple-empty-lines": "off"
+  }
+}

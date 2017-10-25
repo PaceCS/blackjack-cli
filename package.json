@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "chalk": "^2.2.0",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "figlet": "^1.2.0",
+    "inquirer": "^3.3.0"
+  }
+}
