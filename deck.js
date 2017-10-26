@@ -41,7 +41,7 @@ class Deck {
 module.exports.Deck = Deck;
 
 class Hand {
-    constructor( deck = new Deck(), dealer = false, cards = [], aceBig = true) {
+    constructor(deck = new Deck(), dealer = false, cards = [], aceBig = true) {
         this.cards = cards;
         this.aceBig = aceBig;
         this.deck = deck;
@@ -59,6 +59,14 @@ class Hand {
             tempHand[0] = '?';
         }
         return tempHand;
+    }
+
+    get hasAce() {
+        let hasA = false;
+        for (let i = 0; i < this.cards.length; i += 1) {
+            hasA = this.cards[i].match(/Ace/) ? true : hasA;
+        }
+        return hasA;
     }
 
     get sum() {

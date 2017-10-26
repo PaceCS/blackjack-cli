@@ -4,8 +4,11 @@ const chalk = require('chalk');
 const logic = require('./logic');
 
 
+
 console.log(chalk.blue(figlet.textSync('Blackjack')));
-console.log('\n');
+console.log('');
+logic.initialDeal();
+console.log('');
 
 const questions = [
     {
@@ -17,5 +20,20 @@ const questions = [
 ];
 
 inquirer.prompt(questions).then((answers) => {
-    console.log('\n \n');
+    if (answers.user == 'Hit') {
+        logic.playPlayer();
+        logic.playDealer();
+        console.log('');
+    } else {
+        logic.decideWinner();
+    }
+
+    inquirer.prompt(questions).then((answers2) => {
+        if (answers2.user == 'Hit') {
+            logic.playPlayer();
+            logic.playDealer();
+        } else {
+            logic.decideWinner();
+        }
+    });
 });
