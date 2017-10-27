@@ -16,7 +16,6 @@ function initialDeal() {
 
 function playPlayer() {
     playerHand.dealCard();
-    console.log('');
     console.log(`You are dealt the ${playerHand.hand[playerHand.cards.length - 1]}.`);
     let seen = `the ${playerHand.hand[0]}`;
     for (let i = 1; i < playerHand.cards.length - 1; i += 1) {
@@ -27,7 +26,6 @@ function playPlayer() {
 
 
 function playDealer() {
-    console.log('');
     console.log('The dealer makes a decision...');
     if (dealerHand.sum < 16) {
         dealerHand.dealCard();
@@ -45,6 +43,21 @@ function playDealer() {
     }
 }
 
+function decideWinner() {
+    console.log(`The dealer turns over the ${dealerHand.cards[0]}.`);
+    if (dealerHand.sum > 21) {
+        console.log('The dealer busts.  You win!');
+    } else {
+        console.log(`The dealer has ${dealerHand.sum}.`);
+        if (playerHand.sum > dealerHand.sum) {
+            console.log(`You have ${playerHand.sum}. You win!`);
+        } else {
+            console.log(`You have ${playerHand.sum}.  You lose.`);
+        }
+    }
+}
+
 module.exports.initialDeal = initialDeal;
 module.exports.playDealer = playDealer;
 module.exports.playPlayer = playPlayer;
+module.exports.decideWinner = decideWinner;

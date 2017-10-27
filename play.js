@@ -19,21 +19,25 @@ const questions = [
     },
 ];
 
-inquirer.prompt(questions).then((answers) => {
-    if (answers.user == 'Hit') {
-        logic.playPlayer();
-        logic.playDealer();
-        console.log('');
-    } else {
-        logic.decideWinner();
-    }
+let userHit = 'Hit';
 
-    inquirer.prompt(questions).then((answers2) => {
-        if (answers2.user == 'Hit') {
-            logic.playPlayer();
-            logic.playDealer();
-        } else {
-            logic.decideWinner();
-        }
-    });
-});
+async function run() {
+    while (userHit == "Hit") {
+        let answer = await inquirer.prompt(questions).then((answers) => {
+            console.log('');
+            if (answers.user == 'Hit') {
+                logic.playPlayer();
+                console.log('');
+                logic.playDealer();
+                console.log('');
+            } else {
+                logic.decideWinner();
+                userHit = 'Stay';
+            }
+        });
+    }
+}
+
+
+run();
+console.log('');
