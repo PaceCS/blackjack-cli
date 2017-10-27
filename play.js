@@ -20,25 +20,31 @@ const questions = [
 let userHit = 'Hit';
 let noBust = true;
 
-async function run() {
-    while (userHit == "Hit" && noBust) {
-        let answer = await inquirer.prompt(questions).then((answers) => {
-            console.log('');
-            if (answers.user == 'Hit') {
-                logic.playPlayer();
-                console.log('');
-                if (logic.playerHand.sum > 21) {
-                    console.log('Oh no!  You busted!  You lose.');
-                    noBust = false;
-                }
+function gameRun(answers) {
+    console.log('');
+    if (answers.user == 'Hit') {
+        logic.playPlayer();
+        console.log('');
+        if (logic.playerHand.sum > 21) {
+            if (logic.playerHand.hasAce) {
+                logic.playerHand.aceBig = false;
             } else {
-                userHit = 'Stay';
-                logic.playDealer();
-                setTimeout(function(){
-                    logic.decideWinner();
-                },1000);
+            console.log('Oh no!  You busted!  You lose.');
+            noBust = false;
             }
-        });
+        }
+    } else {
+        userHit = 'Stay';
+        logic.playDealer();
+        setTimeout(() => {
+            logic.decideWinner();
+        }, 1000);
+    }
+}
+
+async function run() {
+    while (userHit == 'Hit' && noBust) {
+        await inquirer.prompt(questions).then(answers => gameRun(answers));
     }
     console.log('');
 }

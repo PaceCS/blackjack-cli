@@ -1,6 +1,6 @@
 {
   "parserOptions": {
-        "ecmaVersion": 7,
+        "ecmaVersion": 8,
         "sourceType": "module"
   },
   "extends": "airbnb/base",
@@ -11,6 +11,7 @@
     "no-console": "off",
     "no-unused-vars": "off",
     "radix": "off",
-    "no-multiple-empty-lines": "off"
+    "no-multiple-empty-lines": "off",
+    "no-await-in-loop": "off"
   }
 }
