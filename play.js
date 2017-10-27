@@ -22,7 +22,7 @@ let noBust = true;
 
 function gameRun(answers) {
     console.log('');
-    if (answers.user == 'Hit') {
+    if (answers.user === 'Hit') {
         logic.dealPlayer();
         console.log('');
         if (logic.playerHand.sum > 21) {
@@ -43,7 +43,7 @@ function gameRun(answers) {
 }
 
 async function run() {
-    while (userHit == 'Hit' && noBust) {
+    while (userHit === 'Hit' && noBust) {
         await inquirer.prompt(questions).then(answers => gameRun(answers));
     }
     console.log('');

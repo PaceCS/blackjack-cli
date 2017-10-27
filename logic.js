@@ -20,17 +20,17 @@ function initialDeal() {
 function dealPlayer() {
     playerHand.dealCard();
     console.log(`You are dealt the ${playerHand.cards[playerHand.cards.length - 1]}.`);
-    let seen = '';
+    let print = '';
     for (let i = 0; i < playerHand.cards.length; i += 1) {
         if (i > 0) {
-            seen += ', ';
+            print += ', ';
         }
         if (i === playerHand.cards.length - 1) {
-            seen += 'and ';
+            print += 'and ';
         }
-        seen += `the ${playerHand.cards[i]}`;
+        print += `the ${playerHand.cards[i]}`;
     }
-    console.log(`You now have ${seen}.`);
+    console.log(`You now have ${print}.`);
 }
 
 // This function will play the dealer.  This is an automated process.
