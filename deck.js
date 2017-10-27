@@ -52,15 +52,6 @@ class Hand {
         this.cards.push(this.deck.deal());
     }
 
-    // A method to hide the dealer's first card since it should be face down
-    get hand() {
-        const tempHand = this.cards.slice();
-        if (this.dealer && tempHand && tempHand.length > 1) {
-            tempHand[0] = '?';
-        }
-        return tempHand;
-    }
-
     get hasAce() {
         let hasA = false;
         for (let i = 0; i < this.cards.length; i += 1) {

@@ -23,14 +23,14 @@ let noBust = true;
 function gameRun(answers) {
     console.log('');
     if (answers.user == 'Hit') {
-        logic.playPlayer();
+        logic.dealPlayer();
         console.log('');
         if (logic.playerHand.sum > 21) {
             if (logic.playerHand.hasAce) {
                 logic.playerHand.aceBig = false;
             } else {
-            console.log('Oh no!  You busted!  You lose.');
-            noBust = false;
+                console.log('Oh no!  You busted!  You lose.');
+                noBust = false;
             }
         }
     } else {

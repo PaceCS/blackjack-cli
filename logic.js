@@ -4,27 +4,31 @@ const deck = new DeckImport.Deck();
 const playerHand = new DeckImport.Hand(deck);
 const dealerHand = new DeckImport.Hand(deck, true);
 
+// This function will do the initial dealing of the cards.
+//  You should deal 2 cards to each player and then print what each hand is.
 function initialDeal() {
     console.log('Dealing cards...');
     for (let i = 0; i < 2; i += 1) {
         playerHand.dealCard();
         dealerHand.dealCard();
     }
-    console.log(`Your cards are the ${playerHand.hand[0]} and the ${playerHand.hand[1]}.`);
-    console.log(`The dealer has one card face down and the ${dealerHand.hand[1]} showing.`);
+    console.log(`Your cards are the ${playerHand.cards[0]} and the ${playerHand.cards[1]}.`);
+    console.log(`The dealer has one card face down and the ${dealerHand.cards[1]} showing.`);
 }
 
-function playPlayer() {
+// This function will deal the player a new card and print the result.
+function dealPlayer() {
     playerHand.dealCard();
-    console.log(`You are dealt the ${playerHand.hand[playerHand.cards.length - 1]}.`);
-    let seen = `the ${playerHand.hand[0]}`;
+    console.log(`You are dealt the ${playerHand.cards[playerHand.cards.length - 1]}.`);
+    let seen = `the ${playerHand.cards[0]}`;
     for (let i = 1; i < playerHand.cards.length - 1; i += 1) {
-        seen += `, the ${playerHand.hand[i]}`;
+        seen += `, the ${playerHand.cards[i]}`;
     }
-    console.log(`You now have ${seen}, and the ${playerHand.hand[playerHand.cards.length - 1]}.`);
+    console.log(`You now have ${seen}, and the ${playerHand.cards[playerHand.cards.length - 1]}.`);
 }
 
-
+// This function will play the dealer.  This is an automated process.
+// The dealer should be dealt a card until the sum of the cards is greater than 16.
 function playDealer() {
     console.log(`The dealer now plays and flips over the hole card, the ${dealerHand.cards[0]}.`);
     console.log(`The dealer's hand is the ${dealerHand.cards[0]} and the ${dealerHand.cards[1]}.`);
@@ -38,6 +42,7 @@ function playDealer() {
     }
 }
 
+// This function should decide the winner of the game.
 function decideWinner() {
     if (dealerHand.sum > 21) {
         console.log('The dealer busts.  You win!');
@@ -53,6 +58,6 @@ function decideWinner() {
 
 module.exports.initialDeal = initialDeal;
 module.exports.playDealer = playDealer;
-module.exports.playPlayer = playPlayer;
+module.exports.dealPlayer = dealPlayer;
 module.exports.decideWinner = decideWinner;
 module.exports.playerHand = playerHand;
