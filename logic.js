@@ -35,6 +35,9 @@ function dealPlayer() {
 
 // This function will play the dealer.  This is an automated process.
 // The dealer should be dealt a card until the sum of the cards is greater than 16.
+//  If the dealer has an Ace and goes over 21, then that Ace needs to only count as 1 point.
+// You can check whether the dealer has an Ace using dealerHand.hasAce.
+// Then you will need to use the code dealerHand.aceBig = false to lower the point value.
 function playDealer() {
     console.log(`The dealer now plays and flips over the hole card, the ${dealerHand.cards[0]}.`);
     console.log(`The dealer's hand is the ${dealerHand.cards[0]} and the ${dealerHand.cards[1]}.`);
