@@ -38,5 +38,10 @@ You have 16.  You lose.
 ```
 
 ```
+The dealer has 19.
+You have 19.  You lose.
+```
+
+```
 The dealer busts.  You win!
 ```
