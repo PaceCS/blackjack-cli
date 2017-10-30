@@ -7,13 +7,7 @@ const dealerHand = new DeckImport.Hand(deck, true);
 // This function will do the initial dealing of the cards.
 //  You should deal 2 cards to each player and then print what each hand is.
 function initialDeal() {
-    console.log('Dealing cards...');
-    for (let i = 0; i < 2; i += 1) {
-        playerHand.dealCard();
-        dealerHand.dealCard();
-    }
-    console.log(`Your cards are the ${playerHand.cards[0]} and the ${playerHand.cards[1]}.`);
-    console.log(`The dealer has one card face down and the ${dealerHand.cards[1]} showing.`);
+
 }
 
 // This function will deal the player a new card and print the result.
@@ -39,31 +33,27 @@ function dealPlayer() {
 // You can check whether the dealer has an Ace using dealerHand.hasAce.
 // Then you will need to use the code dealerHand.aceBig = false to lower the point value.
 function playDealer() {
-    console.log(`The dealer now plays and flips over the hole card, the ${dealerHand.cards[0]}.`);
-    console.log(`The dealer's hand is the ${dealerHand.cards[0]} and the ${dealerHand.cards[1]}.`);
+    console.log();
+    console.log();
     console.log('');
-    while (dealerHand.sum < 16) {
-        dealerHand.dealCard();
-        console.log(`The dealer draws a card.  It's the ${dealerHand.cards[dealerHand.cards.length - 1]}. `);
-        if (dealerHand.sum > 21 && dealerHand.hasAce) {
-            dealerHand.aceBig = false;
+    while () {
+
+        console.log();
+        if () {
+
         }
     }
 }
 
 // This function should decide the winner of the game.
 function decideWinner() {
-    if (dealerHand.sum > 21) {
-        console.log('The dealer busts.  You win!');
-    } else {
-        console.log(`The dealer has ${dealerHand.sum}.`);
-        if (playerHand.sum > dealerHand.sum) {
-            console.log(`You have ${playerHand.sum}. You win!`);
-        } else {
-            console.log(`You have ${playerHand.sum}.  You lose.`);
-        }
-    }
+
 }
+
+
+
+
+
 
 module.exports.initialDeal = initialDeal;
 module.exports.playDealer = playDealer;
