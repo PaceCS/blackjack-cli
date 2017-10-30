@@ -9,7 +9,7 @@ Dealing cards...
 Your cards are the 3 of Spades and the 5 of Diamonds.
 The dealer has one card face down and the 4 of Diamonds showing.
 ```
-- **playDealer()** - This function will make the decisions for the dealer.  In casino blackjack, the dealer must hit until the sum of the cards is greater than 16.  Be careful!  If the dealer has an Ace and goes over 21, then you will need to set the point value of the Ace to 1.  (The command to do this is `aceBig = false`.)  You should print the results of the dealer.  A few examples are below.
+- **playDealer()** - This function will make the decisions for the dealer.  In casino blackjack, the dealer must hit until the sum of the cards is greater than 16.  Be careful!  If the dealer has an Ace and goes over 21, then you will need to set the point value of the Ace to 1.  (The command to do this is `dealerHand.aceBig = false`.)  You should print the results of the dealer.  A few examples are below.
 
 ```
 The dealer now plays and flips over the hole card, the King of Hearts.
