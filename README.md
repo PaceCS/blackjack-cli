@@ -2,7 +2,7 @@
 
 You will be re-creating the classic casino game of Blackjack.  You will do this inside the file **logic.js**.  You will need to write the code for several parts of the game.  These will be written as distinct functions.
 
-- **initialDeal()** - This function will deal 2 cards to each player.  You can deal the player a card with `playerHand.dealCard()`.  You can deal the dealer a card with `dealerHand.dealCard()`.  Then print the results.  To find out the player's cards, you can write `playerHand.cards`, which is an array with all of the player's cards.  Your final output should look what's below.  Notice that you only tell the player the dealer's 2nd card since the 1st card is face down.
+- **initialDeal()** - This function will deal 2 cards to each player.  You can deal the player a card with `playerHand.dealCard()`.  You can deal the dealer a card with `dealerHand.dealCard()`.  Then print the results.  To find out the player's cards, use `playerHand.cards` which returns an array with all of the player's cards.  Your final output should look what's below.  Notice that you only tell the player the dealer's 2nd card since the 1st card is face down.
 
 ```
 Dealing cards...
