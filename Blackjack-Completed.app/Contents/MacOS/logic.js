@@ -82,7 +82,7 @@ function playDealer() {
     console.log(`The dealer now plays and flips over the hole card, the ${dealerHand.cards[0]}.`);
     console.log(`The dealer's hand is the ${dealerHand.cards[0]} and the ${dealerHand.cards[1]}.`);
     console.log('');
-    while (dealerHand.sum < 16) {
+    while (dealerHand.sum < 17) {
         dealerHand.dealCard();
         console.log(`The dealer draws a card.  It's the ${dealerHand.cards[dealerHand.cards.length - 1]}. `);
         if (dealerHand.sum > 21 && dealerHand.hasAce) {
